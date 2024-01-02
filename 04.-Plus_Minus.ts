@@ -30,10 +30,9 @@ function readLine(): string {
 
 function plusMinus(arr: number[]): void {
     // Write your code here
-    var positives = 0;
-    var negatives = 0;
-    var zeros = 0;
-    var length = arr.length;
+    var positives: number = 0;
+    var negatives: number = 0;
+    var zeros: number = 0;
     for(let i = 0; i <= arr.length - 1; i++){
         if(arr[i] > 0)
             positives++;
@@ -42,9 +41,9 @@ function plusMinus(arr: number[]): void {
         else
             negatives++;
     }
-    console.log((1/(length/positives)).toFixed(6));
-    console.log((1/(length/negatives)).toFixed(6));
-    console.log((1/(length/zeros)).toFixed(6));
+    console.log((1/(arr.length/positives)).toFixed(6));
+    console.log((1/(arr.length/negatives)).toFixed(6));
+    console.log((1/(arr.length/zeros)).toFixed(6));
 }
 
 function main() {

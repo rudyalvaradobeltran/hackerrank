@@ -30,9 +30,9 @@ function readLine(): string {
 
 function diagonalDifference(arr: number[][]): number {
     // Write your code here
-    var a = 0;
-    var b = 0;
-    var k = 0;
+    var a: number = 0;
+    var b: number = 0;
+    var k: number = 0;
     for(let i = 0; i < arr[0].length; i++){
         a = a + arr[i][i];
     }
