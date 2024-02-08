@@ -33,8 +33,7 @@ function readLine(): string {
 function gradingStudents(grades: number[]): number[] {
   // Write your code here
   let newGrades: number[] = [];
-  let length = grades.length-1;
-  for(let i = 0; i <= length; i++) {
+  for(let i = 0; i <= grades.length-1; i++) {
     if (grades[i] >= 38) {
       for(let j = 0; j <= 100; j = j + 5) {
         if (grades[i] <= j) {
