@@ -36,9 +36,9 @@ function designerPdfViewer(h: number[], word: string): number {
   var maxValue: number = 0;
   for (let i: number = 0; i < word.length; i++) {
     const alphaIndex: number =
-      word.charAt(i).toLowerCase().charCodeAt(0) - 97 + 1;
-    if (h[alphaIndex - 1] > maxValue) {
-      maxValue = h[alphaIndex - 1];
+      word.charAt(i).toLowerCase().charCodeAt(0) - 97;
+    if (h[alphaIndex] > maxValue) {
+      maxValue = h[alphaIndex];
     }
   }
   return maxValue * word.length;
