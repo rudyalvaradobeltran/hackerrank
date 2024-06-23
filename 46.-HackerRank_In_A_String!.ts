@@ -31,12 +31,12 @@ function readLine(): string {
  */
 
 function hackerrankInString(s: string): string {
-  const hackerrank = "hackerrank";
-  var isSubsequence = true;
-  var letters = `${s}`;
-  for (var j = 0; j < hackerrank.length; j++) {
-    var letterExists = false;
-    for (var i = 0; i < s.length; i++) {
+  const hackerrank: string = "hackerrank";
+  var isSubsequence: boolean = true;
+  var letters: string = `${s}`;
+  for (var j: number = 0; j < hackerrank.length; j++) {
+    var letterExists: boolean = false;
+    for (var i: number = 0; i < s.length; i++) {
       if (letters[i] === hackerrank[j]) {
         letters = letters.substring(i + 1, letters.length);
         letterExists = true;
