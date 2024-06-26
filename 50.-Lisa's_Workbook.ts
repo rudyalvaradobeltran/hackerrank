@@ -34,15 +34,12 @@ function readLine(): string {
  */
 
 function workbook(n: number, k: number, arr: number[]): number {
-  var array: number[][] = [];
-  var page = 1;
-  var count = 0;
+  var page: number = 1;
+  var count: number = 0;
   for (let i: number = 1; i <= arr.length; i++) {
-    for (let j: number = 1; j <= arr[i-1]; j++) {
-      if (!array[page]) array[page] = [];
+    for (let j: number = 1; j <= arr[i - 1]; j++) {
       if (page === j) count++;
-      array[page].push(j);
-      if (j % k === 0 && j !== arr[i-1]) page++;
+      if (j % k === 0 && j !== arr[i - 1]) page++;
     }
     page++;
   }
