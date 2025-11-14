@@ -30,17 +30,15 @@ function readLine(): string {
 
 function diagonalDifference(arr: number[][]): number {
     // Write your code here
-    var a: number = 0;
-    var b: number = 0;
-    var k: number = 0;
-    for(let i = 0; i < arr[0].length; i++){
-        a = a + arr[i][i];
+    let leftToRight: number = 0;
+    let rightToLeft: number = 0;
+    for (let i = 0; i < arr.length; i++) {
+        leftToRight = leftToRight + arr[i][i];
     }
-    for(let i = arr[0].length - 1; i >= 0; i--){
-        b = b + arr[k][i];
-        k++;
+    for (let i = arr.length - 1; i >= 0; i--) {
+        rightToLeft = rightToLeft + arr[(arr.length - 1) - i][i];
     }
-    return (a - b) < 0 ? (a - b) * -1 : (a - b);
+    return (leftToRight - rightToLeft) < 0 ? (rightToLeft - leftToRight) : (leftToRight - rightToLeft);
 }
 
 function main() {
@@ -60,3 +58,8 @@ function main() {
 
     ws.end();
 }
+
+// TAKEAWAY
+// for (let i = 0; i < arr.length; i++) => 0 to 5
+// for (let i = arr.length - 1; i >= 0; i--) => 5 to 0
+//     rightToLeft = rightToLeft + arr[(arr.length - 1) - i][i]; => 5-5 = 0; 5-4 = 1; 5-3 = 2... inversion (0 to 5)
