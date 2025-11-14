@@ -32,8 +32,21 @@ function readLine(): string {
 
 function birthdayCakeCandles(candles: number[]): number {
     // Write your code here
-    const max: number = Math.max(...candles);
-    return candles.filter((value) => (value === max)).length;
+    /*const max: number = Math.max(...candles);
+    return candles.filter((value) => (value === max)).length;*/
+    let max: number = candles[0];
+    let count: number = 0;
+    for (let i=1; i<candles.length; i++) {
+        if (max < candles[i]) {
+            max = candles[i]; 
+        }
+    }
+    for (let i=0; i<candles.length; i++) {
+        if (max === candles[i]) {
+            count++;
+        }
+    }
+    return count;
 }
 
 function main() {
@@ -49,3 +62,7 @@ function main() {
 
     ws.end();
 }
+
+// TAKEAWAY
+// const max: number = Math.max(...candles) => get largest number from an array
+// candles.filter((value) => (value === 4)) => get an array of only "4"
