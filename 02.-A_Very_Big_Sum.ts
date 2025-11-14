@@ -32,7 +32,7 @@ function readLine(): string {
 
 function aVeryBigSum(ar: number[]): number {
     // Write your code here
-    return ar.reduce((accumulator, value) => value + accumulator, 0);
+    return ar.reduce((a, b) => a + b);
 }
 
 function main() {
@@ -48,3 +48,6 @@ function main() {
 
     ws.end();
 }
+
+// TAKEAWAY
+// Use reduce (a,b) => a+b to get the sum of all numbers in an array
