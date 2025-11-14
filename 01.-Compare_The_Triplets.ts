@@ -33,18 +33,16 @@ function readLine(): string {
  */
 
 function compareTriplets(a: number[], b: number[]): number[] {
-    var points: number[] = [];
-    points[0] = 0;
-    points[1] = 0;
-    for(let i = 0; i <= 2; i++) {
-        if (a[i] > b[i]){
-            points[0]++;
-        }
-        if (b[i] > a[i]) {
-            points[1]++;
+    let alice: number = 0;
+    let bob: number = 0;
+    for (let i = 0; i < 3; i++) {
+        if (a[i] > b[i]) {
+            alice++;
+        } else if (a[i] < b[i]) {
+            bob++;
         }
     }
-    return points;
+    return [alice, bob];
 }
 
 function main() {
@@ -60,3 +58,7 @@ function main() {
 
     ws.end();
 }
+
+// TAKEAWAYS
+// Keep it simple
+// Always read if the last "if condition" is really necessary; in this case, it was not.
