@@ -53,3 +53,7 @@ function main() {
 
     plusMinus(arr);
 }
+
+// TAKEAWAYS
+// Read the order of how the console logs should be displayed
+// toFixed = number of decimals of a number = 4.5.toFixed(5) = 4.50000
