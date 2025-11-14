@@ -30,7 +30,7 @@ function readLine(): string {
 
 function miniMaxSum(arr: number[]): void {
     // Write your code here
-    const orderedArr: number[] = arr.sort((a, b) => a - b);
+    /*const orderedArr: number[] = arr.sort((a, b) => a - b);
     var minimum: number = 0;
     var maximum: number = 0;
     for (let i = 0; i <= orderedArr.length - 2; i++){
@@ -39,7 +39,19 @@ function miniMaxSum(arr: number[]): void {
     for (let j = 1; j <= orderedArr.length - 1; j++){
         maximum = maximum + orderedArr[j];
     }
-    console.log(`${minimum} ${maximum}`);
+    console.log(`${minimum} ${maximum}`);*/
+    let min: number = arr[0];
+    let max: number = arr[0];
+    let sum: number = arr.reduce((a, b) => a + b);
+    for (let i=1; i < arr.length; i++) {
+        if (min >= arr[i]) {
+            min = arr[i];
+        }
+        if (max < arr[i]) {
+            max = arr[i];
+        }
+    }
+    console.log(`${sum - max} ${sum - min}`);
 }
 
 function main() {
@@ -48,3 +60,6 @@ function main() {
 
     miniMaxSum(arr);
 }
+
+// TAKEAWAY
+// Get min and max from an array => get min and max from a[0] => from 1 to n, compare a[0] is greater or equal than a[1], if so, set min = a[1]...
