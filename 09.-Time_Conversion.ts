@@ -57,3 +57,6 @@ function main() {
 
     ws.end();
 }
+
+// TAKEAWAYS
+// Use slice to get a chunk of a string. index-start, index-end
