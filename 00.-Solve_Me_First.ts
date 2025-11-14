@@ -28,3 +28,6 @@ function main() {
 function solveMeFirst(a: number, b: number) {
     console.log(a + b);
 }
+
+// TAKEAWAY
+// readLine() in case of reading input once, twice, etc.
