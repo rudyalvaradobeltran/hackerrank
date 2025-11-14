@@ -30,7 +30,7 @@ function readLine(): string {
 
 function staircase(n: number): void {
   // Write your code here
-  var length: number = n;
+  /*var length: number = n;
   for(let i = 1; i <= n; i++){
       var concat: string = "";
       for(let j = 1; j <= n; j++){
@@ -41,7 +41,17 @@ function staircase(n: number): void {
       }
       console.log(concat);
       length--;
-  }
+  }*/
+  for (let i = 1; i <= n; i++) {
+        let concat: string = "";
+        for (let k = 1; k <= n - i; k++) {
+            concat = concat + " ";   
+        }
+        for (let k = 1; k <= i; k++) {
+           concat = concat + "#";
+        }
+        console.log(concat);
+    }  
 }
 
 function main() {
@@ -49,3 +59,8 @@ function main() {
 
     staircase(n);
 }
+
+// TAKEAWAYS
+// for (let i = 1; i <= n; i++) => given a loop of size n
+// for (let k = 1; k <= n - i; k++) => i increments so reduces the loops by 1 each time => 5, 4, 3...
+// for (let k = 1; k <= i; k++) => i increments so increases the loops by 1 each time => 1, 2, 3...
