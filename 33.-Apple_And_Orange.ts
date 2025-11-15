@@ -42,22 +42,18 @@ function countApplesAndOranges(
   apples: number[],
   oranges: number[]
 ): void {
-  var applesCount: number = 0;
-  var orangesCount: number = 0;
-  for (let i: number = 0; i < apples.length; i++) {
-    var distance: number = a + apples[i];
-    if (distance >= s && distance <= t) {
-      applesCount++;
+  let applesCount: number = 0;
+    let orangesCount: number = 0;
+    for (let i:number=0; i < apples.length; i++){
+        let applePosition = a + apples[i];
+        if (applePosition >= s && applePosition <= t) applesCount++;
     }
-  }
-  for (let i: number = 0; i < oranges.length; i++) {
-    var distance: number = b + oranges[i];
-    if (distance >= s && distance <= t) {
-      orangesCount++;
+    for (let i:number=0; i < oranges.length; i++){
+        let orangePosition = b + oranges[i];
+        if (orangePosition >= s && orangePosition <= t) orangesCount++;
     }
-  }
-  console.log(applesCount);
-  console.log(orangesCount);
+    console.log(applesCount);
+    console.log(orangesCount);
 }
 
 function main() {
@@ -97,3 +93,6 @@ function main() {
 
   countApplesAndOranges(s, t, a, b, apples, oranges);
 }
+
+// TAKEWAYS
+// Read carefully, save time
