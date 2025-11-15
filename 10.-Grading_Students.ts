@@ -32,24 +32,15 @@ function readLine(): string {
 
 function gradingStudents(grades: number[]): number[] {
   // Write your code here
-  let newGrades: number[] = [];
-  for(let i = 0; i <= grades.length-1; i++) {
-    if (grades[i] >= 38) {
-      for(let j = 0; j <= 100; j = j + 5) {
-        if (grades[i] <= j) {
-          if ((j - grades[i]) < 3) {
-            newGrades.push(j);
-          } else {
-            newGrades.push(grades[i]);
-          }
-          break;
+  for(let i = 0; i < grades.length; i++) {
+        if (grades[i] >= 38) {
+            let remainder = grades[i] % 5;
+            if (remainder > 2) {
+                grades[i] = grades[i] + (5 - remainder);
+            }
         }
-      }
-    } else {
-      newGrades.push(grades[i]);
-    }
   }
-  return newGrades;
+  return grades;
 }
 
 function main() {
@@ -71,3 +62,8 @@ function main() {
 
     ws.end();
 }
+
+// TAKEAWAY
+// To get the remainder left over of a number from the previous multiple of a number, you should use the % operator
+// 38 % 5 = 3
+// 32 % 10 = 2
